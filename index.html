@@ -12,6 +12,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/markdown.js"></script>
+    <script src="js/to-markdown.min.js"></script>
     <script src="js/bootstrap4.min.js"></script>
     <script src="js/bootstrap-markdown4.js"></script>
     <script src="js/bootstrap-markdown.es.js"></script>
@@ -21,6 +22,23 @@
     <div class="container">
         <textarea name="content" data-iconlibrary="fa" data-language="es" data-provide="markdown" rows="10"></textarea>
     </div>
+    <div class="container">
+        <div class="form-group inline">
+            <button onclick="getContent()" class="btn btn-primary">Get</button>
+            <button onclick="getParsedContent()" class="btn btn-primary">Get Parsed</button>
+        </div>
+        <textarea id="text"></textarea>
+    </div>
 </body>
+<script>
+    function get() {
+        alert(getContent());
+    }
+
+    function getParsed() {
+        $("#text").html("");
+        $("#text").html(parseContent());
+    }
+</script>
 
 </html>
